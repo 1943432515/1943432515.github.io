@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="陈祺新的个人主页：CAFCL 代码生成研究、论文与开源项目。">
+  <meta name="theme-color" content="#122c37">
+  <title>陈祺新 · 研究与代码</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-zh="跳转到内容" data-en="Skip to content">跳转到内容</a>
+  <header class="header wrap">
+    <a class="wordmark" href="#" aria-label="陈祺新主页">陈祺新<span> / </span><small>RESEARCH & CODE</small></a>
+    <nav aria-label="主导航">
+      <a href="#research" data-zh="研究" data-en="Research">研究</a>
+      <a href="#publication" data-zh="论文" data-en="Paper">论文</a>
+      <a href="https://github.com/1943432515" rel="noopener">GitHub ↗</a>
+      <button id="language" aria-label="Switch to English">EN</button>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">PERSONAL RESEARCH PORTFOLIO</p>
+        <h1>陈祺新<span data-zh="研究、代码，\n与持续探索。" data-en="Research, code,\nand exploration.">研究、代码，<br>与持续探索。</span></h1>
+        <p class="intro" data-zh="这里汇集我的论文与开源实践。当前工作聚焦代码生成：从数据质量到训练顺序，探索复杂度感知的课程学习。" data-en="A home for my research and open-source work. My featured project explores code generation through data quality and complexity-aware curriculum learning.">这里汇集我的论文与开源实践。当前工作聚焦代码生成：从数据质量到训练顺序，探索复杂度感知的课程学习。</p>
+        <div class="actions"><a class="button primary" href="#publication" data-zh="阅读研究 ↓" data-en="Explore research ↓">阅读研究 ↓</a><a class="text-link" href="https://github.com/1943432515/cqx-code-generation" data-zh="浏览源码 ↗" data-en="Browse the code ↗">浏览源码 ↗</a></div>
+      </div>
+      <aside class="research-note" aria-label="Featured research">
+        <div class="note-head"><span class="dot"></span><span>FEATURED WORK / 01</span></div>
+        <p class="note-title">CAFCL<span>Complexity-Aware<br>Curriculum Learning</span></p>
+        <div class="orbit" aria-hidden="true"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="orbit-core">&lt; / &gt;</div><span class="orbit-label l1">QUALITY</span><span class="orbit-label l2">COMPLEXITY</span><span class="orbit-label l3">LEARNING</span></div>
+        <div class="note-bottom"><span>Qwen3-0.6B</span><span>HumanEval</span><span>LoRA</span></div>
+      </aside>
+    </section>
+    <div class="topic-strip"><div class="wrap"><span>CODE GENERATION</span><span>DATA QUALITY</span><span>CURRICULUM LEARNING</span><span>OPEN SOURCE</span></div></div>
+    <section id="research" class="section wrap">
+      <div class="section-heading"><p class="eyebrow">01 / RESEARCH</p><h2 data-zh="让训练数据，\n有质量，也有顺序。" data-en="Better data.\nA deliberate learning order.">让训练数据，<br>有质量，也有顺序。</h2><p data-zh="CAFCL 把数据筛选与课程安排连接起来：先检查质量，再衡量复杂度，最后按难度逐步训练。" data-en="CAFCL connects filtering with curriculum design: assess data quality, estimate complexity, then train progressively from easy to hard.">CAFCL 把数据筛选与课程安排连接起来：先检查质量，再衡量复杂度，最后按难度逐步训练。</p></div>
+      <div class="method-grid">
+        <article><span class="step">01</span><h3 data-zh="筛选数据" data-en="Filter the data">筛选数据</h3><p data-zh="从指令复杂度、代码可执行性与指令代码对齐三个维度筛选训练样本。" data-en="Filter training samples by instruction complexity, code executability, and instruction-code alignment.">从指令复杂度、代码可执行性与指令代码对齐三个维度筛选训练样本。</p><code>prepare_data.py</code></article>
+        <article><span class="step">02</span><h3 data-zh="安排课程" data-en="Build the curriculum">安排课程</h3><p data-zh="按照复杂度组织三个累积阶段：简单、简单加中等，以及全部筛选后的数据。" data-en="Organize three cumulative stages: easy, easy plus medium, and all filtered examples.">按照复杂度组织三个累积阶段：简单、简单加中等，以及全部筛选后的数据。</p><code>run_b4_cafcl.sh</code></article>
+        <article><span class="step">03</span><h3 data-zh="评测代码" data-en="Evaluate the code">评测代码</h3><p data-zh="使用 HumanEval 生成并评测代码，与随机训练和仅筛选数据的基线对比。" data-en="Generate and evaluate code on HumanEval, comparing with random-order and filtering-only baselines.">使用 HumanEval 生成并评测代码，与随机训练和仅筛选数据的基线对比。</p><code>eval_humaneval.py</code></article>
+      </div>
+    </section>
+    <section id="publication" class="publication-section">
+      <div class="wrap publication-grid">
+        <div><p class="eyebrow">02 / PUBLICATION</p><h2 data-zh="论文与实现" data-en="Paper & implementation">论文与实现</h2><p class="muted" data-zh="从方法描述到实验脚本，\n把研究过程留在可阅读的地方。" data-en="From methodology to experiment scripts,\na readable record of the research.">从方法描述到实验脚本，<br>把研究过程留在可阅读的地方。</p></div>
+        <article class="paper"><div class="paper-meta"><span>CONFERENCE PAPER</span><span>CAFCL</span></div><h3>Complexity-Aware Curriculum Learning for Code Generation</h3><p data-zh="陈祺新 · 论文配套项目" data-en="陈祺新 · Companion research project">陈祺新 · 论文配套项目</p><p class="paper-summary" data-zh="面向代码生成微调，结合复杂度感知的数据质量筛选与渐进式课程学习。论文全文、训练代码及实验曲线均可访问。" data-en="A code-generation fine-tuning framework combining complexity-aware data filtering with progressive curriculum learning. Explore the paper, training code, and experiment curves.">面向代码生成微调，结合复杂度感知的数据质量筛选与渐进式课程学习。论文全文、训练代码及实验曲线均可访问。</p><div class="actions"><a class="button primary" href="paper/CAFCL.pdf" data-zh="阅读论文 PDF ↗" data-en="Read paper PDF ↗">阅读论文 PDF ↗</a><a class="text-link" href="https://github.com/1943432515/cqx-code-generation" data-zh="项目源码 ↗" data-en="Source code ↗">项目源码 ↗</a></div><a class="download" href="paper/CAFCL.pdf" download="CAFCL.pdf" data-zh="下载 PDF ↓" data-en="Download PDF ↓">下载 PDF ↓</a></article>
+      </div>
+    </section>
+    <section class="section wrap experiment">
+      <div class="section-heading"><p class="eyebrow">03 / EXPERIMENT</p><h2 data-zh="训练过程，也值得观察。" data-en="The learning process matters.">训练过程，也值得观察。</h2><p data-zh="项目记录的 CAFCL 三阶段训练曲线。切换阶段时加入更复杂的样本，观察损失随课程推进的变化。" data-en="The project's recorded CAFCL training curves. Each curriculum stage introduces more complex samples, showing how loss evolves across the learning schedule.">项目记录的 CAFCL 三阶段训练曲线。切换阶段时加入更复杂的样本，观察损失随课程推进的变化。</p></div>
+      <figure><img src="assets/cafcl_loss_curve.png" alt="CAFCL 三阶段训练损失曲线" loading="lazy" width="1200" height="600"><figcaption><span data-zh="图源：CAFCL 配套代码仓库" data-en="Source: CAFCL companion code repository">图源：CAFCL 配套代码仓库</span><a href="https://github.com/1943432515/cqx-code-generation/tree/main/figure" data-zh="查看日志与绘图脚本 ↗" data-en="View logs & plotting script ↗">查看日志与绘图脚本 ↗</a></figcaption></figure>
+    </section>
+    <section class="closing wrap"><p class="eyebrow">KEEP EXPLORING</p><h2 data-zh="在 GitHub，继续交流。" data-en="Continue the conversation on GitHub.">在 GitHub，继续交流。</h2><a class="button primary" href="https://github.com/1943432515" data-zh="访问 GitHub 主页 ↗" data-en="Visit my GitHub profile ↗">访问 GitHub 主页 ↗</a></section>
+  </main>
+  <footer class="footer wrap"><span>陈祺新 / RESEARCH & CODE</span><span>GitHub Pages · <a href="https://github.com/1943432515/1943432515.github.io" data-zh="网站源码 ↗" data-en="Website source ↗">网站源码 ↗</a></span></footer>
+</body>
+</html>
